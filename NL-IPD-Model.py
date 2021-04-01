@@ -3,7 +3,7 @@ import torch
 from torch.autograd import Variable
 import IPDmodeling as ipdm
 
-dtype = torch.cuda.FloatTensor
+dtype = torch.FloatTensor
 
 y1 = Variable(torch.zeros(5,1).type(dtype),requires_grad = True)
 y2 = Variable(torch.zeros(5,1).type(dtype),requires_grad = True)
@@ -20,8 +20,8 @@ for epoch in range(1000):
 	x2 = torch.sigmoid(y2)
 
 	pm1Y,pm2Y = ipdm.av_return(x1,x2,r1,r2)
-	pm1Y = Variable(torch.from_numpy(pm1Y).float().cuda(),requires_grad=True)
-	pm2Y = Variable(torch.from_numpy(pm2Y).float().cuda(),requires_grad=True)
+	pm1Y = Variable(torch.from_numpy(pm1Y).float(),requires_grad=True)
+	pm2Y = Variable(torch.from_numpy(pm2Y).float(),requires_grad=True)
 	pm1 = torch.sigmoid(pm1Y)
 	pm2 = torch.sigmoid(pm2Y)
 

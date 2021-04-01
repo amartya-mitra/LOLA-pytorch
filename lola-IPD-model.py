@@ -4,7 +4,7 @@ from torch.autograd import Variable
 import IPDmodeling as ipdm
 import avReturnIPD as r
 
-dtype = torch.cuda.FloatTensor
+dtype = torch.FloatTensor
 
 y1 = Variable(torch.zeros(5,1).type(dtype),requires_grad = True)
 y2 = Variable(torch.zeros(5,1).type(dtype),requires_grad = True)

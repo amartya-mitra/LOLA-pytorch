@@ -2,7 +2,7 @@ import numpy as np
 import torch
 from torch.autograd import Variable
 
-dtype = torch.cuda.FloatTensor
+dtype = torch.FloatTensor
 
 y1 = Variable(torch.zeros(5,1).type(dtype),requires_grad = True)
 y2 = Variable(torch.zeros(5,1).type(dtype),requires_grad = True)
@@ -19,7 +19,7 @@ gamma = Variable(torch.Tensor([0.8]).type(dtype))
 delta = Variable(torch.Tensor([0.1]).type(dtype))
 eta = Variable(torch.Tensor([10]).type(dtype))
 
-for epoch in range(3000):
+for epoch in range(3):
 	x1 = torch.sigmoid(y1)
 	x2 = torch.sigmoid(y2)
 

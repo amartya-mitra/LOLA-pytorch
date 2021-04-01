@@ -2,7 +2,7 @@ import numpy as np
 import torch
 from torch.autograd import Variable
 
-dtype = torch.cuda.FloatTensor
+dtype = torch.FloatTensor
 
 y1 = Variable(torch.zeros(5,1).type(dtype),requires_grad = True)
 y2 = Variable(torch.zeros(5,1).type(dtype),requires_grad = True)
